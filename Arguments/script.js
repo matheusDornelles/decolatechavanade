@@ -1,0 +1,3 @@
+function showArgs(){
+    return arguments;
+}
