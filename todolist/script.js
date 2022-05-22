@@ -6,9 +6,11 @@ const tasks = []
 
 function showTasks(){
     
+    listElement.innerHTML = ''
+    
     for (task of tasks){
         const taskElement = document.createElement('li')
-        const text = document.createTextNode(tasks)
+        const text = document.createTextNode(task)
 
         taskElement.appendChild(text)
         listElement.appendChild(taskElement)
@@ -16,11 +18,12 @@ function showTasks(){
 }
 showTasks();
 
-function addTask() {
+function addTask(){
     const text = inputElement.value
     tasks.push(text)
+    inputElement.value = ''
 
     showTasks()
 }
 
-buttonElement.setAttribute('onclick', 'addTask()')
+buttonElement.setAttribute('onclick','addTask()')
